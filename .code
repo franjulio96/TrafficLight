@@ -1,1 +1,68 @@
 f
+int blue = 2;
+int green = 3;
+int yellow = 4;
+int red = 5;
+int green2 = 11;
+int yellow2 = 12;
+int red2 = 13;
+void setup() {                
+ pinMode(blue, OUTPUT);
+  pinMode(green, OUTPUT);
+  pinMode(yellow, OUTPUT);
+  pinMode(red, OUTPUT);
+  pinMode(green2, OUTPUT);
+  pinMode(yellow2, OUTPUT);
+  pinMode(red2, OUTPUT);
+  
+}
+
+
+void loop() {
+  digitalWrite(blue, HIGH);
+  digitalWrite(green, LOW);
+  digitalWrite(yellow, LOW);
+  digitalWrite(red, HIGH);
+  digitalWrite(green2, LOW);
+  digitalWrite(yellow2, LOW);
+  digitalWrite(red2, HIGH);
+  delay(1500);  
+     
+  digitalWrite(green, LOW);
+  digitalWrite(yellow, LOW);
+  digitalWrite(red, HIGH);
+  digitalWrite(green2, LOW);
+  digitalWrite(yellow2, LOW);
+  digitalWrite(red2,HIGH);
+  delay(1500); 
+  digitalWrite(blue, LOW);
+  digitalWrite(green, HIGH);
+  digitalWrite(yellow, LOW);
+  digitalWrite(red, LOW);
+  digitalWrite(green2, LOW);
+  digitalWrite(yellow2, LOW);
+  digitalWrite(red2, HIGH);
+  delay(1500);          
+  digitalWrite(blue, LOW);  
+  digitalWrite(green, LOW);
+  digitalWrite(yellow, HIGH);
+  digitalWrite(red, LOW);
+  digitalWrite(green2, LOW);
+  digitalWrite(yellow2, LOW);
+  digitalWrite(red2, HIGH);
+  delay(1000);     
+  digitalWrite(green, LOW);
+  digitalWrite(yellow, LOW);
+  digitalWrite(red, HIGH);
+  digitalWrite(green2, HIGH);
+  digitalWrite(yellow2, LOW);
+  digitalWrite(red2, LOW);
+  delay(1500); 
+  digitalWrite(green, LOW);
+  digitalWrite(yellow, LOW);
+  digitalWrite(red, HIGH);
+  digitalWrite(green2, LOW);
+  digitalWrite(yellow2, HIGH);
+  digitalWrite(red2, LOW);
+  delay(1000); 
+}
