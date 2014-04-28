@@ -1,3 +1,4 @@
+
 int blue = 2;
 int green = 3;
 int yellow = 4;
@@ -22,4 +23,26 @@ Serial.begin(9600);
   pinMode(echo_pin, OUTPUT);     
 }  
 void loop() {
-  if(digitalRead(
+  if(digitalRead(echo_pin)==HIGH && digitalRead( )==HIGH){
+   delay(500);
+   digitalWrite( , );
+   digitalWrite( , );
+   delay(3000);
+   digitalWrite( , );
+   digitalWrite( , );
+   delay(2000);
+   digitalWrite( , );    
+   digitalWrite( , );
+}
+ if(digitalRead(pulse_pin)==HIGH && digitalRead( )==HIGH){
+   delay(500);
+   digitalWrite( , );
+   digitalWrite( , );
+   delay(3000);
+   digitalWrite( , );
+   digitalWrite( , );
+   delay(2000);
+   digitalWrite( , );    
+   digitalWrite( , );
+   }
+ }
