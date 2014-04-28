@@ -5,67 +5,21 @@ int red = 5;
 int green2 = 8;
 int yellow2 = 9;
 int red2 = 10;
-
 const int pulse_pin =  13;   
 const int echo_pin = 12;
 int pulse_state ; 
 int port_10_value;
-void setup() {   
+void setup() {
 Serial.begin(9600);  
- pinMode(blue, OUTPUT);
+  pinMode(blue, OUTPUT);
   pinMode(green, OUTPUT);
   pinMode(yellow, OUTPUT);
   pinMode(red, OUTPUT);
   pinMode(green2, OUTPUT);
   pinMode(yellow2, OUTPUT);
   pinMode(red2, OUTPUT);
-  pinMode(pulse_pin, OUTPUT);      
-  pinMode(echo_pin, INPUT);     
-}
+  pinMode(pulse_pin, INPUT);      
+  pinMode(echo_pin, OUTPUT);     
+}  
 void loop() {
-  digitalWrite(blue, HIGH);
-  digitalWrite(green, LOW);
-  digitalWrite(yellow, LOW);
-  digitalWrite(red, HIGH);
-  digitalWrite(green2, LOW);
-  digitalWrite(yellow2, LOW);
-  digitalWrite(red2, HIGH);
-  delay(1500);  
-  digitalWrite(green, LOW);
-  digitalWrite(yellow, LOW);
-  digitalWrite(red, HIGH);
-  digitalWrite(green2, LOW);
-  digitalWrite(yellow2, LOW);
-  digitalWrite(red2,HIGH);
-  delay(1500); 
-  digitalWrite(blue, LOW);
-  digitalWrite(green, HIGH);
-  digitalWrite(yellow, LOW);
-  digitalWrite(red, LOW);
-  digitalWrite(green2, LOW);
-  digitalWrite(yellow2, LOW);
-  digitalWrite(red2, HIGH);
-  delay(1500);          
-  digitalWrite(blue, LOW);  
-  digitalWrite(green, LOW);
-  digitalWrite(yellow, HIGH);
-  digitalWrite(red, LOW);
-  digitalWrite(green2, LOW);
-  digitalWrite(yellow2, LOW);
-  digitalWrite(red2, HIGH);
-  delay(1000);     
-  digitalWrite(green, LOW);
-  digitalWrite(yellow, LOW);
-  digitalWrite(red, HIGH);
-  digitalWrite(green2, HIGH);
-  digitalWrite(yellow2, LOW);
-  digitalWrite(red2, LOW);
-  delay(1500); 
-  digitalWrite(green, LOW);
-  digitalWrite(yellow, LOW);
-  digitalWrite(red, HIGH);
-  digitalWrite(green2, LOW);
-  digitalWrite(yellow2, HIGH);
-  digitalWrite(red2, LOW);
-  delay(1000); 
-}
+  if(digitalRead(
