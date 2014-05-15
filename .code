@@ -1,11 +1,11 @@
-  int blue = 2;
-  int green = 3;
-  int yellow = 4;
-  int red = 5;
-  int green2 = 8;
-  int yellow2 = 9;
-  int red2 = 10;
-  const int pingPin = 13;
+int blue = 2;
+int green = 3;
+int yellow = 4;
+int red = 5;
+int green2 = 8;
+int yellow2 = 9;
+int red2 = 10;
+const int pingPin = 13;
 void setup() {
   Serial.begin(9600);
   pinMode(blue, OUTPUT);
@@ -16,7 +16,34 @@ void setup() {
   pinMode(yellow2, OUTPUT);
   pinMode(red2, OUTPUT);
 }
-void loop(){
+ int ping(){
+    long duration, inches, cm;
+    pinMode(pingPin, OUTPUT);
+    digitalWrite(pingPin, LOW);
+    delayMicroseconds(2);
+    digitalWrite(pingPin, HIGH);
+    delayMicroseconds(5);
+    digitalWrite(pingPin, LOW);
+    pinMode(pingPin, INPUT);
+    duration = pulseIn(pingPin, HIGH);
+    inches = microsecondsToInches(duration);
+    cm = microsecondsToCentimeters(duration);
+    Serial.print(inches);
+    Serial.print("in, ");
+    Serial.print(cm);
+    Serial.print("cm");
+    Serial.println();
+    delay(100);
+  }
+  long microsecondsToInches(long microseconds)
+  {
+    return microseconds / 74 / 2;
+  }
+    long microsecondsToCentimeters(long microseconds)
+    {
+      return microseconds / 29 / 2;
+    }
+    void loop(){
   if (ping() > 1 && ping()<5)
   {
     digitalWrite(blue, HIGH);
@@ -66,7 +93,7 @@ void loop(){
     delay(1000);
   }
   
-  else if (ping() > 5 && ping()<10)
+  else if (ping() > 5 && ping()<15)
   {
     digitalWrite(green, LOW);
     digitalWrite(yellow, LOW);
@@ -114,34 +141,7 @@ void loop(){
     digitalWrite(red2, HIGH);
     delay(1000);
   }
-  int ping(){
-    long duration, inches, cm;
-    pinMode(pingPin, OUTPUT);
-    digitalWrite(pingPin, LOW);
-    delayMicroseconds(2);
-    digitalWrite(pingPin, HIGH);
-    delayMicroseconds(5);
-    digitalWrite(pingPin, LOW);
-    pinMode(pingPin, INPUT);
-    duration = pulseIn(pingPin, HIGH);
-    inches = microsecondsToInches(duration);
-    cm = microsecondsToCentimeters(duration);
-    Serial.print(inches);
-    Serial.print("in, ");
-    Serial.print(cm);
-    Serial.print("cm");
-    Serial.println();
-    delay(100);
-  }
-  long microsecondsToInches(long microseconds)
-  {
-    return microseconds / 74 / 2;
-  }
-    long microsecondsToCentimeters(long microseconds)
-    {
-      return microseconds / 29 / 2;
     }
-}
 
 
  
