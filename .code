@@ -17,7 +17,7 @@ void setup() {
   pinMode(red2, OUTPUT);
 }
  int ping(){
-    long duration, inches, cm;
+    long duration, cm;
     pinMode(pingPin, OUTPUT);
     digitalWrite(pingPin, LOW);
     delayMicroseconds(2);
@@ -26,25 +26,18 @@ void setup() {
     digitalWrite(pingPin, LOW);
     pinMode(pingPin, INPUT);
     duration = pulseIn(pingPin, HIGH);
-    inches = microsecondsToInches(duration);
     cm = microsecondsToCentimeters(duration);
-    Serial.print(inches);
-    Serial.print("in, ");
     Serial.print(cm);
     Serial.print("cm");
     Serial.println();
-    delay(100);
-  }
-  long microsecondsToInches(long microseconds)
-  {
-    return microseconds / 74 / 2;
+  
   }
     long microsecondsToCentimeters(long microseconds)
     {
       return microseconds / 29 / 2;
     }
     void loop(){
-  if (ping() > 1 && ping()<5)
+  if (ping() > 1 && ping()<15)
   {
     digitalWrite(blue, HIGH);
     digitalWrite(green, LOW);
@@ -93,7 +86,7 @@ void setup() {
     delay(1000);
   }
   
-  else if (ping() > 5 && ping()<15)
+  else  (ping() > 16 && ping()<50)
   {
     digitalWrite(green, LOW);
     digitalWrite(yellow, LOW);
@@ -116,14 +109,7 @@ void setup() {
     digitalWrite(green2, LOW);
     digitalWrite(yellow2, LOW);
     digitalWrite(red2, HIGH);
-    delay(1500);  
-    digitalWrite(green, LOW);
-    digitalWrite(yellow, LOW);
-    digitalWrite(red, HIGH);
-    digitalWrite(green2, LOW);
-    digitalWrite(yellow2, LOW);
-    digitalWrite(red2,HIGH);
-    delay(1500); 
+    delay(1500);   
     digitalWrite(blue, LOW);
     digitalWrite(green, HIGH);
     digitalWrite(yellow, LOW);
